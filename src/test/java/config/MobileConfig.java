@@ -1,62 +1,26 @@
 package config;
 
-@MobileConfig.LoadPolicy(MobileConfig.LoadType.MERGE)
+import org.aeonbits.owner.Config;
+
+/*@MobileConfig.LoadPolicy(MobileConfig.LoadType.MERGE)
 @org.aeonbits.owner.Config.Sources(
         {"system:properties",
                 "classpath:${env}.properties",
-                "classpath:credentials.properties"})
-public interface MobileConfig extends org.aeonbits.owner.Config {
+                "classpath:credentials.properties"})*/
 
-    @Key("login")
-    String login();
-
-    @Key("password")
-    String password();
-
-    @Key("baseURL")
-    String baseUrl();
-
-    @Key("appURL")
-    String appUrl();
+@Config.Sources({
+        "classpath:${env}.properties"
+})
+public interface MobileConfig extends Config {
 
     @Key("device")
-    String device();
+    @DefaultValue("Samsung Galaxy S22 Ultra")
+    String getDevice();
 
     @Key("os_version")
-    String osVersion();
+    @DefaultValue("12.0")
+    String getVersion();
 
-    @Key("project")
-    String projectName();
-
-    @Key("build")
-    String buildName();
-
-    @Key("name")
-    String testName();
-
-    @Key("localURL")
-    String localUrl();
-
-    @Key("platformName")
-    String platformName();
-
-    @Key("deviceName")
-    String deviceName();
-
-    @Key("platformVersion")
-    String platformVersion();
-
-    @Key("appLocalURL")
-    String appLocalURL();
-
-    @Key("appPath")
-    String appPath();
-
-    @Key("appPackage")
-    String appPackage();
-
-    @Key("appActivity")
-    String appActivity();
-
-
+    @Key("appUrl")
+    String getApp();
 }

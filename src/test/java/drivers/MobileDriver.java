@@ -17,8 +17,8 @@ import java.net.URL;
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
-public class MobileDriver implements WebDriverProvider {
-    static MobileConfig config = ConfigFactory.create(MobileConfig.class);
+public class MobileDriver {
+    /*static MobileConfig config = ConfigFactory.create(MobileConfig.class);
 
     public static URL getAppiumServerUrl() {
         try {
@@ -58,5 +58,5 @@ public class MobileDriver implements WebDriverProvider {
             }
         }
         return app.getAbsolutePath();
-    }
+    }*/
 }
