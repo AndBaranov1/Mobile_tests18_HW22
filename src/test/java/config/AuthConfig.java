@@ -3,7 +3,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:authentication.properties"
+        "classpath:browserstack.properties"
 })
 public interface AuthConfig extends Config {
     @Key("username")

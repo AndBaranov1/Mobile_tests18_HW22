@@ -2,25 +2,29 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-/*@MobileConfig.LoadPolicy(MobileConfig.LoadType.MERGE)
-@org.aeonbits.owner.Config.Sources(
-        {"system:properties",
-                "classpath:${env}.properties",
-                "classpath:credentials.properties"})*/
-
 @Config.Sources({
-        "classpath:${env}.properties"
+        "classpath:local.properties"
 })
 public interface MobileConfig extends Config {
 
-    @Key("device")
-    @DefaultValue("Samsung Galaxy S22 Ultra")
-    String getDevice();
+    @Key("deviceName")
+    @DefaultValue("Pixel 4 API 30")
+    String deviceName();
 
-    @Key("os_version")
-    @DefaultValue("12.0")
-    String getVersion();
+    @Key("platformVersion")
+    @DefaultValue("android")
+    String platformVersion();
+
+    @Key("osVersion")
+    @DefaultValue("11.0")
+    String osVersion();
 
     @Key("appUrl")
     String getApp();
+
+    @Key("appPackage")
+    String appPackage();
+
+    @Key("appActivity")
+    String appActivity();
 }

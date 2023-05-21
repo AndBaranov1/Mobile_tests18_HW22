@@ -69,3 +69,9 @@ task ios(type: Test) {
         includeTags("ios")
     }
 }
+
+task android_emulator(type: Test) {
+    useJUnitPlatform {
+        includeTags 'android_emulator'
+    }
+}
