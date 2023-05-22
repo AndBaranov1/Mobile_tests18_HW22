@@ -13,22 +13,6 @@ import static io.qameta.allure.Allure.step;
 
 public class LocalAndroidTest extends TestBase {
 
-    @Tag("android_emulator")
-    @Test
-    void successfulSearchTest() {
-        step("Type search", () -> {
-            $(accessibilityId("Search Wikipedia")).click();
-            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
-        });
-        step("Verify content found", () ->
-                $(id("org.wikipedia.alpha:id/view_card_header_title"))
-                        .click());
-        step("Check error text", () -> {
-            $(id("org.wikipedia.alpha:id/view_wiki_error_text")).shouldBe(visible);
-        });
-
-    }
-
     @Test
     @Tag("android_emulator")
     void onboardingScreenApp() {

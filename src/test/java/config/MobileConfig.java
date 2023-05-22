@@ -3,7 +3,7 @@ package config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:local.properties"
+        "classpath:emulator.properties"
 })
 public interface MobileConfig extends Config {
 
@@ -12,11 +12,11 @@ public interface MobileConfig extends Config {
     String deviceName();
 
     @Key("platformVersion")
-    @DefaultValue("android")
+    @DefaultValue("11.0")
     String platformVersion();
 
     @Key("osVersion")
-    @DefaultValue("11.0")
+   // @DefaultValue("11.0")
     String osVersion();
 
     @Key("appUrl")
