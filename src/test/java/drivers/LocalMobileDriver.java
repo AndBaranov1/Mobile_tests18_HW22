@@ -39,13 +39,9 @@ public class LocalMobileDriver implements WebDriverProvider {
                 .setPlatformName(ANDROID)
                 .setDeviceName(emulatorConfig.deviceName())
                 .setPlatformVersion(emulatorConfig.platformVersion())
-                //.setDeviceName("Pixel 4 API 30")
-                //.setPlatformVersion("11.0")
                 .setApp(getAppPath())
-                //.setAppPackage("org.wikipedia.alpha")
                 .setAppPackage(emulatorConfig.appPackage())
                 .setAppActivity(emulatorConfig.appActivity());
-                //.setAppActivity("org.wikipedia.main.MainActivity");
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
