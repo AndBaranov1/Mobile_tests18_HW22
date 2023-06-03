@@ -1,16 +1,30 @@
 package tests;
 
+import io.appium.java_client.AppiumBy;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 import static io.appium.java_client.AppiumBy.accessibilityId;
 import static io.appium.java_client.AppiumBy.id;
 import static io.qameta.allure.Allure.step;
 
 public class SearchWikiTests extends TestBase {
+    @Test
+    @Tag("android")
+    void success() {
+        open("https://store.steampowered.com/");
+       // $(AppiumBy.id(".global_action_link:nth-child(2)")).click();
+        $(AppiumBy.id("store_nav_search_term")).click();
+        $(AppiumBy.id("store_nav_search_term")).setValue("Dota 2").pressEnter();
+
+    }
+
+   //store_nav_search_term строка поиска
+    //store_search_link кнопка поиска
 
     @Test
     @Tag("android")
