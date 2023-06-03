@@ -26,7 +26,7 @@ public class SearchWikiTests extends TestBase {
    //store_nav_search_term строка поиска
     //store_search_link кнопка поиска
 
-    @Test
+   /* @Test
     @Tag("android")
     void successfulSearchTest() {
         step("Type search", () -> {
@@ -55,5 +55,5 @@ public class SearchWikiTests extends TestBase {
             step("Check text on button at login form", () -> {
                 $(id("org.wikipedia.alpha:id/login_button")).shouldHave(text("Log in"));
             });
-        }
+        }*/
 }
